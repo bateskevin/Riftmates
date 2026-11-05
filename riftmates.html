@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>(function(){try{var saved=localStorage.getItem('riftmates_theme');document.documentElement.dataset.rmTheme=saved==='light'?'light':'dark';}catch(e){document.documentElement.dataset.rmTheme='dark';}})();</script>
 <style>
 :root{color-scheme:dark;--bg:#090c13;--panel:#111722;--panel2:#171f2c;--line:#283345;--text:#eef3fb;--muted:#8f9cb0;--green:#b7f36b;--blue:#7ca8ff;--red:#ff7788;--gold:#f5cf72;--radius:16px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% -10%,#1b2c39 0,transparent 36%),var(--bg);color:var(--text);font:14px/1.5 Roboto,Arial,ui-sans-serif,system-ui,-apple-system,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:232px minmax(0,1fr)}aside{padding:25px 15px;background:#0b1019d9;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.logo{font-size:23px;font-weight:800;letter-spacing:-1.1px;padding:0 11px 28px}.logo span{color:var(--green)}.eyebrow{color:var(--green);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);padding:11px 12px;text-align:left;display:flex;gap:11px;align-items:center}.nav button:hover,.nav button.active{background:#1a2432;color:var(--text);border-color:#2a394c}.nav button.active{box-shadow:inset 3px 0 var(--green)}.nav .ico{width:20px;text-align:center;color:var(--green)}.sidefoot{margin-top:auto;padding:15px 11px;color:var(--muted);font-size:11px;border-top:1px solid var(--line)}main{width:100%;max-width:1600px;padding:30px clamp(16px,3vw,42px);margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:24px}.title h1{font-size:clamp(28px,4vw,39px);letter-spacing:-1.5px;line-height:1.1;margin:7px 0}.subtitle{color:var(--muted);font-size:13px}.actions,.filters{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.field,select,input{background:#141c28;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px 12px;outline:none}.field:focus,select:focus,input:focus{border-color:#7199d4}.btn{border:1px solid var(--line);background:#192332;color:var(--text);padding:10px 14px;border-radius:10px;font-weight:700}.btn.primary{background:var(--green);color:#10180b;border-color:var(--green)}.btn:disabled{opacity:.55;cursor:wait}.notice{padding:12px 15px;border:1px solid var(--line);background:#101722;border-radius:11px;color:var(--muted);font-size:12px;margin-bottom:22px}.notice.error{border-color:#783e4b;color:#ffb7c0}.section{display:none}.section.active{display:block}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:17px}.metric,.panel{background:linear-gradient(145deg,#141c28,#101620);border:1px solid var(--line);border-radius:var(--radius);min-width:0}.metric{padding:17px 19px;position:relative;overflow:hidden}.metric:after{content:"";position:absolute;right:-25px;top:-34px;width:95px;height:95px;border:1px solid #b7f36b20;border-radius:50%;box-shadow:0 0 0 13px #b7f36b08,0 0 0 27px #b7f36b05}.metric-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700}.metric-value{font-size:32px;font-weight:900;letter-spacing:-1px;margin:7px 0 0}.metric-foot{font-size:11px;color:var(--muted)}.layout{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}.panel{padding:19px;margin-bottom:15px}.span-8{grid-column:span 8}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.span-12{grid-column:span 12}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}.panel h2{font-size:14px;margin:0;font-weight:700;letter-spacing:.1px}.panel p{font-size:12px;color:var(--muted);margin:4px 0 0}.tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:10px;color:var(--muted);white-space:nowrap}.tag:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}.player-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.profile{border:1px solid var(--line);background:linear-gradient(140deg,#192331,#111722);border-radius:13px;padding:13px;min-width:0;overflow:hidden}.profile-top{display:flex;gap:11px;align-items:center}.avatar{width:52px;height:52px;object-fit:cover;border-radius:12px;border:1px solid #65758b66;background:#253144;flex-shrink:0}.avatar-fallback{display:grid;place-items:center;font-weight:900;color:var(--green);font-size:20px}.profile-name{font-size:12px;font-weight:700;overflow-wrap:anywhere;line-height:1.35}.profile-tag{color:var(--muted);font-size:10px;margin-top:3px}.profile-rate{font-size:23px;font-weight:900;letter-spacing:-.7px;margin-top:12px}.bar{height:5px;background:#273141;border-radius:8px;overflow:hidden;margin:6px 0 10px}.bar i{display:block;height:100%;border-radius:8px;background:var(--green)}.profile-bottom{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.champ-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.champ-card{display:flex;gap:10px;align-items:center;min-width:0;padding:9px;border:1px solid var(--line);border-radius:12px;background:#151e2a}.champ-img{width:54px;height:54px;border-radius:10px;object-fit:cover;background:#263344;flex-shrink:0}.champ-name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.champ-sub{font-size:10px;color:var(--muted)}.champ-wr{font-size:13px;font-weight:700;margin-top:3px}.positive{color:var(--green)}.negative{color:var(--red)}.neutral{color:var(--gold)}.duo-list{display:grid;gap:8px}.duo-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;border:1px solid var(--line);background:#151d29;padding:12px;border-radius:11px}.duo-name{font-size:12px;font-weight:800;overflow-wrap:anywhere}.duo-sub{font-size:10px;color:var(--muted);margin-top:3px}.duo-score{text-align:right;font-size:17px;font-weight:900}.duo-score small{display:block;font-size:10px;font-weight:650}.chartbox{position:relative;height:255px;width:100%}.chartbox.short{height:220px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;font-size:12px;min-width:550px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid #263141;vertical-align:middle}th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.65px;background:#151d29;white-space:nowrap}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#1a2431}.champ-cell{display:flex;align-items:center;gap:8px;font-weight:700}.mini-champ{width:28px;height:28px;object-fit:cover;border-radius:6px;background:#253143}.winpill{font-size:10px;font-weight:700;padding:4px 7px;border-radius:6px;background:#b7f36b16;color:var(--green)}.losepill{font-size:10px;font-weight:700;padding:4px 7px;border-radius:6px;background:#ff778816;color:var(--red)}.match-list{display:grid;gap:9px}.match{display:grid;grid-template-columns:55px minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:12px;background:#141c28}.match-result{height:48px;border-radius:9px;display:grid;place-items:center;font-weight:900;font-size:11px}.match-result.win{background:#b7f36b17;color:var(--green)}.match-result.loss{background:#ff778817;color:var(--red)}.match-title{font-size:12px;font-weight:800}.match-sub{font-size:10px;color:var(--muted);overflow-wrap:anywhere}.match-champs{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap}.match-champs img{width:26px;height:26px;border-radius:6px;object-fit:cover}.muted{color:var(--muted)}.empty{padding:25px 8px;color:var(--muted);font-size:12px;text-align:center}.squad-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.squad-row:last-child{border:0}.tiny-avatar{width:36px;height:36px;border-radius:9px;object-fit:cover;background:#253143}.squad-left{display:flex;align-items:center;gap:10px;min-width:0}.squad-name{font-size:12px;font-weight:800;overflow-wrap:anywhere}.footnote{font-size:10px;color:var(--muted);padding:15px 2px}.view-title{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:4px 0 13px}.role-picks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.role-pick{position:relative;border:1px solid #344255;background:linear-gradient(155deg,#1b2936,#111722);border-radius:14px;padding:13px;min-width:0;overflow:hidden}.role-pick:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--green)}.role-pick-head{display:flex;align-items:center;justify-content:space-between;gap:6px;color:var(--green);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.role-pick .avatar{width:44px;height:44px;margin:13px 0 8px}.role-pick-name{font-size:12px;font-weight:700;line-height:1.35;overflow-wrap:anywhere}.role-pick-score{font-size:26px;font-weight:800;letter-spacing:-1px;margin-top:11px}.role-pick-meta{font-size:10px;color:var(--muted);margin-top:3px}.role-pick-foot{margin-top:12px;padding-top:9px;border-top:1px solid var(--line);font-size:10px;color:var(--muted)}.role-rank{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:7px;background:#b7f36b1a;color:var(--green);font-size:10px;font-weight:900}.role-champs{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.role-champ{display:flex;align-items:center;gap:6px;background:#0d141e;border:1px solid #2b394b;border-radius:8px;padding:5px 6px;min-width:0;flex:1}.role-champ img{width:31px;height:31px;border-radius:6px;object-fit:cover}.role-champ-label{font-size:10px;font-weight:800;line-height:1.2;overflow-wrap:anywhere}.role-champ-meta{font-size:9px;color:var(--muted);margin-top:2px}.duo-avatars{display:flex;align-items:center;gap:0;margin-bottom:8px}.duo-avatar{width:34px;height:34px;border:2px solid #151d29;border-radius:10px;object-fit:cover;background:#253143}.duo-avatar+.duo-avatar{margin-left:-5px}.duo-bar{height:5px;background:#293545;border-radius:9px;overflow:hidden;margin-top:8px}.duo-bar i{display:block;height:100%;border-radius:9px}.team-combo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.team-combo{border:1px solid var(--line);background:linear-gradient(145deg,#17212e,#111722);border-radius:12px;padding:12px;min-width:0}.team-combo-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.team-combo-players{display:grid;gap:8px}.team-combo-player{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:8px;align-items:center;border-top:1px solid #283345;padding-top:8px}.team-combo-player .tiny-avatar{width:32px;height:32px}.team-combo-player-name{font-size:11px;font-weight:800;overflow-wrap:anywhere}.team-combo-champ{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);white-space:nowrap}.team-combo-champ img{width:34px;height:34px;border-radius:7px;object-fit:cover}.team-combo-foot{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:10px;margin-top:10px;padding-top:8px;border-top:1px solid #283345}@media(max-width:850px){.team-combo-grid{grid-template-columns:1fr}}.role-callout{display:flex;align-items:flex-start;gap:10px;border:1px solid #344255;background:#151f2b;border-radius:11px;padding:12px 14px;color:var(--muted);font-size:12px;margin-bottom:14px}.role-callout strong{color:var(--text)}@media(max-width:1050px){.role-picks{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.role-picks{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:430px){.role-picks{grid-template-columns:1fr 1fr}}.player-award{display:inline-flex;margin-top:5px;padding:3px 6px;border-radius:6px;font-size:8px;font-weight:900;letter-spacing:.5px}.player-award.best{background:#b7f36b20;color:var(--green)}.player-award.worst{background:#ff778820;color:var(--red)}.role-rankings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.role-rank-card{border:1px solid var(--line);background:linear-gradient(145deg,#141c28,#101620);border-radius:14px;padding:15px;min-width:0}.role-rank-card h3{margin:0;color:var(--green);font-size:15px}.role-rank-player{display:grid;grid-template-columns:28px 36px minmax(0,1fr);gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.role-rank-player:last-child{border-bottom:0}.role-rank-player .tiny-avatar{width:34px;height:34px}.role-rank-main{min-width:0}.role-rank-name{font-size:11px;font-weight:700;overflow-wrap:anywhere}.role-rank-meta{font-size:10px;color:var(--muted)}.role-rank-wr{font-size:14px;font-weight:900;text-align:right}.role-rank-champs{grid-column:2/4;display:flex;gap:6px;flex-wrap:wrap;padding-bottom:3px}.role-rank-champ{display:flex;align-items:center;gap:5px;border:1px solid #2b394b;background:#0d141e;border-radius:7px;padding:4px 6px;max-width:100%}.role-rank-champ img{width:28px;height:28px;border-radius:5px;object-fit:cover}.role-rank-champ span{font-size:9px;line-height:1.25}.role-rank-champ b{display:block;font-size:10px}.role-rank-champ small{color:var(--muted)}@media(max-width:700px){.role-rankings-grid{grid-template-columns:1fr}}.hidden{display:none!important}
 @media(max-width:1100px){.app{grid-template-columns:190px minmax(0,1fr)}main{padding:24px 20px}.player-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.champ-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.span-8,.span-7,.span-5,.span-4{grid-column:span 6}}
@@ -593,6 +594,34 @@ aside::before{display:none!important}
 .tft-board-stars{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);padding:0 5px;line-height:17px;border-radius:7px;background:#172432;border:1px solid #718392;color:#ffda73;font-size:12px;font-weight:900;white-space:nowrap;letter-spacing:1px}
 .tft-board-name{font-size:11px;line-height:1.2;text-align:center;max-width:74px;overflow-wrap:anywhere;color:#d9e5ee}
 @media(max-width:650px){.tft-board-unit{width:65px;min-width:65px}.tft-board-portrait{width:55px;height:55px}.tft-board-name{max-width:65px}}
+
+/* Sidebar: keep game and appearance controls visible; scroll long navigation. */
+@media (min-width:761px) {
+  .app > aside { min-height:0; overflow:hidden; }
+  .app > aside > .logo,
+  .app > aside > .rm-game-switch,
+  .app > aside > .rm-appearance { flex:0 0 auto; }
+  .app > aside > .nav {
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#52677b transparent;
+    padding:4px 5px 10px 0;
+    align-content:start;
+  }
+  .app > aside > .nav::-webkit-scrollbar { width:6px; }
+  .app > aside > .nav::-webkit-scrollbar-thumb { background:#52677b; border-radius:10px; }
+  .app > aside > .rm-appearance { margin-top:10px; }
+  .app > aside > .sidefoot { display:none; }
+}
+/* Small screens retain the existing horizontal navigation layout. */
+@media (max-width:760px) {
+  .app > aside > .nav { min-height:0; overflow-x:auto; overflow-y:hidden; }
+  .app > aside > .rm-appearance { flex-shrink:0; }
+}
 </style><style>
 .ranked-filters{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin:12px 0 22px}.ranked-picker{position:relative;min-width:250px}.ranked-picker .overview-multi-trigger{width:100%}.ranked-picker .overview-multi-menu{z-index:50;min-width:290px}.ranked-picker .overview-multi-options{max-height:280px;overflow:auto}.ranked-queue-picker{display:flex;gap:8px;flex-wrap:wrap}.ranked-queue-choice{background:#182333;color:#9eafc5;border:1px solid #344358;border-radius:10px;padding:10px 16px;font-weight:800}.ranked-queue-choice.active{background:#b7f36b;color:#12200b;border-color:#b7f36b}.ranked-current{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:18px 0}.ranked-current-card{display:flex;gap:10px;align-items:center;background:#152032;border:1px solid #33455c;border-radius:12px;padding:12px;cursor:pointer}.ranked-current-card:hover{border-color:#b7f36b}.ranked-current-card img{width:42px;height:42px;border-radius:9px}.ranked-current-card strong{font-size:12px}.ranked-current-card small{display:block;color:#9cadc3;font-size:11px}.ranked-chart-wrap{height:390px;position:relative;background:#101825;border:1px solid #29394e;border-radius:12px;padding:15px;margin:16px 0}.ranked-hover{position:absolute;top:12px;right:12px;pointer-events:none;background:#1c2b40;border:1px solid #6587ae;border-radius:10px;padding:8px 12px;font-size:12px;box-shadow:0 8px 24px #0007;display:flex;gap:8px;align-items:center}.ranked-hover[hidden]{display:none}.ranked-hover img{width:30px;height:30px;border-radius:7px}.ranked-rank-badge{font-size:10px;color:#f5cf72;font-weight:700}.ranked-history-list{margin-top:18px}.ranked-history-list table{width:100%;border-collapse:collapse}.ranked-history-list th,.ranked-history-list td{padding:9px 12px;border-bottom:1px solid #2b3c50;text-align:left;font-size:12px}
 .tft-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.tft-profile{border:1px solid #344b5f;background:linear-gradient(140deg,#192b3a,#111b27);border-radius:14px;padding:16px}.tft-profile h3{margin:0 0 9px}.tft-bubbles{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.tft-bubble{background:#2a3b38;color:#d0f1c2;border:1px solid #58785b;padding:5px 9px;border-radius:30px;font-size:11px;font-weight:700}.tft-progress{display:flex;flex-wrap:wrap;gap:4px;margin:13px 0}.tft-progress-cell{display:grid;place-items:center;width:25px;height:28px;border-radius:5px;background:#4c3541;color:#ffc3c8;font-size:11px;font-weight:800}.tft-progress-cell.good{background:#27483b;color:#b7f36b}.tft-tier{padding:3px 9px;border-radius:6px;background:#34485c;font-weight:900}.tft-tier.best{background:#5d4a25;color:#ffdf85}</style><style>
@@ -790,10 +819,544 @@ table td {border-color:#35495c}
 .tft-bubble-tooltip:after{content:"";position:absolute;top:100%;left:calc(50% - 6px);border:6px solid transparent;border-top-color:#668b76}
 .tft-bubble-info:hover .tft-bubble-tooltip,.tft-bubble-info:focus-visible .tft-bubble-tooltip,.tft-bubble-info[aria-expanded="true"] .tft-bubble-tooltip{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .tft-modern-card,.tft-history-card,.tft-history-player,.tft-history-player-body,.tft-history-roster,.tft-hq-history,.tft-hq-history .panel{overflow:visible}
-</style></head>
+
+/* Aurelion Sol is anchored to the status box, not to the header height.
+   The My Account selector can grow without separating his claws from the box. */
+#notice {position:relative; overflow:visible;}
+#notice .rm-asol-notice-art {
+  position:absolute; left:53%; bottom:calc(100% - 24px);
+  height:195px; width:auto; max-width:34%; object-fit:contain;
+  object-position:center bottom; pointer-events:none; z-index:8;
+  filter:drop-shadow(0 7px 11px rgba(0,0,0,.22));
+}
+@media(max-width:1050px){#notice .rm-asol-notice-art{left:49%;height:165px;max-width:42%;}}
+@media(max-width:760px){#notice .rm-asol-notice-art{left:42%;height:130px;max-width:55%;}}
+</style><style id="rm-appearance-styles">
+/* Riftmates appearance settings: light mode is deliberately opt-in. */
+.rm-appearance{padding:12px 10px;margin:10px 0 12px;border:1px solid var(--line);border-radius:13px;background:var(--panel);}
+.rm-appearance-label{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:9px}
+.rm-appearance-options{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.rm-appearance-button{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;padding:9px 7px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);font-size:11px;font-weight:800}
+.rm-appearance-button[aria-pressed="true"]{border-color:var(--green);background:color-mix(in srgb,var(--green) 13%,var(--panel));color:var(--text)}
+.rm-appearance-button:hover{border-color:var(--green)}
+.rm-appearance-button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+html[data-rm-theme="light"]{color-scheme:light;--bg:#f4f7fb;--panel:#ffffff;--panel2:#edf3f8;--line:#cbd7e3;--text:#172535;--muted:#596b7f;--green:#167d58;--blue:#255bb1;--red:#c23f55;--gold:#936000}
+html[data-rm-theme="light"] body{background:radial-gradient(ellipse at 78% -10%,#dfece9 0,transparent 38%),var(--bg);color:var(--text)}
+html[data-rm-theme="light"] aside{background:#f8fbfd;border-color:var(--line)}
+html[data-rm-theme="light"] .nav button{color:var(--muted)}
+html[data-rm-theme="light"] .nav button:hover,html[data-rm-theme="light"] .nav button.active{background:#e2f1eb;color:#173c31;border-color:#a4d1bc}
+html[data-rm-theme="light"] .nav button.active{box-shadow:inset 3px 0 var(--green)}
+html[data-rm-theme="light"] .eyebrow,html[data-rm-theme="light"] .nav .ico{color:var(--green)}
+html[data-rm-theme="light"] .field,html[data-rm-theme="light"] select,html[data-rm-theme="light"] input,html[data-rm-theme="light"] textarea{background:#fff;color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] .btn{background:#eaf1f7;color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] .btn.primary{background:#267d59;color:#fff;border-color:#267d59}
+html[data-rm-theme="light"] .notice,html[data-rm-theme="light"] .metric,html[data-rm-theme="light"] .panel,html[data-rm-theme="light"] .profile,html[data-rm-theme="light"] .champ-card,html[data-rm-theme="light"] .duo-item,html[data-rm-theme="light"] .match,html[data-rm-theme="light"] .role-pick,html[data-rm-theme="light"] .role-rank-card,html[data-rm-theme="light"] .team-combo,html[data-rm-theme="light"] .tier-row,html[data-rm-theme="light"] .draft-slot,html[data-rm-theme="light"] .draft-rating-card{background:linear-gradient(145deg,#fff,#f3f7fa);border-color:var(--line);color:var(--text)}
+html[data-rm-theme="light"] .metric:after{border-color:#167d5820;box-shadow:0 0 0 13px #167d5808,0 0 0 27px #167d5805}
+html[data-rm-theme="light"] th{background:#eaf0f6;color:#43596c}
+html[data-rm-theme="light"] td,html[data-rm-theme="light"] th,html[data-rm-theme="light"] .squad-row{border-color:#d6e1ea}
+html[data-rm-theme="light"] tbody tr:hover{background:#e8f3f1}
+html[data-rm-theme="light"] .bar,html[data-rm-theme="light"] .duo-bar{background:#d9e5ec}
+html[data-rm-theme="light"] .winpill{background:#d8f1e5;color:#176e4e}
+html[data-rm-theme="light"] .losepill{background:#ffe4e8;color:#b72e49}
+html[data-rm-theme="light"] .avatar,html[data-rm-theme="light"] .tiny-avatar,html[data-rm-theme="light"] .champ-img,html[data-rm-theme="light"] .mini-champ,html[data-rm-theme="light"] .duo-avatar{background:#dbe6ee}
+html[data-rm-theme="light"] .draft-options,html[data-rm-theme="light"] .pro-picker-menu,html[data-rm-theme="light"] .overview-multi-menu{background:#fff;color:var(--text);border-color:var(--line);box-shadow:0 12px 30px #1e334326}
+html[data-rm-theme="light"] .draft-option,html[data-rm-theme="light"] .pro-team-option,html[data-rm-theme="light"] .pro-team-choice,html[data-rm-theme="light"] .role-champ,html[data-rm-theme="light"] .role-rank-champ,html[data-rm-theme="light"] .account-edit-row,html[data-rm-theme="light"] .queue-option{background:#f3f7fa;color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] .draft-option:hover,html[data-rm-theme="light"] .pro-team-choice:hover{background:#e5f1ec}
+html[data-rm-theme="light"] .sync-dialog{background:radial-gradient(ellipse at 50% 0%,#e4f1f1 0,#fff 68%);border-color:var(--line);box-shadow:0 25px 90px #12253855;color:var(--text)}
+html[data-rm-theme="light"] .sync-overlay{background:#1c3448a6}
+html[data-rm-theme="light"] .rm-game-switch,html[data-rm-theme="light"] .rm-appearance{background:#edf4f8;border-color:var(--line)}
+html[data-rm-theme="light"] .rm-game-choice,html[data-rm-theme="light"] [data-game-choice]{background:#fff;color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] .rm-game-choice.active,html[data-rm-theme="light"] [data-game-choice].active{background:#e1f3e8;border-color:var(--green)}
+html[data-rm-theme="light"] .tier-champ-stat,html[data-rm-theme="light"] .profile-tag,html[data-rm-theme="light"] .subtitle,html[data-rm-theme="light"] .muted{color:var(--muted)}
+html[data-rm-theme="light"] .tier-label{color:#172535}
+html[data-rm-theme="light"] .tag{background:#f2f6f9;border-color:var(--line);color:var(--muted)}
+html[data-rm-theme="light"] .rm-asol-header,html[data-rm-theme="light"] .rm-asol-notice-art{filter:drop-shadow(0 8px 10px #1c304029)}
+/* Existing feature-specific surfaces, including TFT, rankings, filters and My Account. */
+html[data-rm-theme="light"] :is([class*="tft-"],[class*="ranked-"],[class*="overview-"],[class*="tier-"],[class*="draft-"],[class*="account-"],[class*="my-account"],[class*="rm-my-"]):is(.panel,.card,.item,.row,.box,.menu,.dropdown,.trigger,.option,.slot,.picker,.tile,.entry,.select,.field,.board,.list,.wrap,.container){background-color:#fff;color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] :is(.tft-board,.tft-board-unit,.tft-player-card,.tft-match-card,.tft-tier-card,.ranked-card,.overview-multi-trigger,.overview-multi-option,.tier-filter,.tier-champion,.draft-picker-input,.account-edit-row){color:var(--text);border-color:var(--line)}
+html[data-rm-theme="light"] :is(.tft-board,.tft-player-card,.tft-match-card,.tft-tier-card,.ranked-card,.overview-multi-trigger,.overview-multi-option,.tier-filter,.draft-picker-input){background:#f5f9fc}
+html[data-rm-theme="light"] :is(.tft-board,.tft-player-card,.tft-match-card,.tft-tier-card,.ranked-card,.overview-multi-trigger,.overview-multi-option,.tier-filter,.draft-picker-input) :is(h2,h3,h4,strong,b){color:var(--text)}
+@media(max-width:760px){.rm-appearance{margin:8px 0}.rm-appearance-options{grid-template-columns:1fr 1fr}}
+</style><style id="rm-full-light-theme">
+/* Complete light palette. Intentionally loaded LAST in <head> to override legacy dark rules. */
+html[data-rm-theme="light"] {
+ color-scheme:light;
+ --bg:#ffffff;--panel:#ffffff;--panel2:#f3f7fa;--line:#d4dfe8;
+ --text:#172b3a;--muted:#536779;--green:#17835b;--blue:#2b65ba;
+ --red:#bd4055;--gold:#966200;
+ --rm-surface:#fff;--rm-soft:#f3f7fa;--rm-soft2:#eaf1f6;
+ --rm-edge:#d4dfe8;--rm-ink:#172b3a;--rm-subtle:#536779;
+}
+html[data-rm-theme="light"] body,
+html[data-rm-theme="light"] .app,
+html[data-rm-theme="light"] main {
+ background:#fff !important;color:var(--rm-ink) !important;
+}
+html[data-rm-theme="light"] aside {background:#f5f8fb !important;border-color:var(--rm-edge)!important;}
+html[data-rm-theme="light"] :is(h1,h2,h3,h4,h5,h6,.title,.title h1,#pageTitle,.panel h2,.panel h3,.metric-value,.profile-name,.profile-rate,.champ-name,.champ-wr,.duo-name,.duo-score,.match-title,.squad-name,.role-pick-name,.role-rank-name,.tier-champ-name,.draft-score,.rm-live-panel h2) {color:var(--rm-ink)!important;}
+html[data-rm-theme="light"] :is(.subtitle,.muted,.metric-foot,.metric-label,.profile-tag,.champ-sub,.duo-sub,.match-sub,.role-pick-meta,.role-rank-meta,.tier-champ-stat,.footnote,.empty,.panel p,.sidefoot,.rm-game-caption,.rm-appearance-label) {color:var(--rm-subtle)!important;}
+/* Primary surfaces throughout League, TFT, stats, dashboards and popups. */
+html[data-rm-theme="light"] :is(.panel,.metric,.profile,.champ-card,.duo-item,.match,.role-pick,.role-rank-card,.team-combo,.tier-row,.draft-slot,.draft-rating-card,.role-champ,.role-rank-champ,.team-combo-player,.ranked-card,.tft-board,.tft-player-card,.tft-match-card,.tft-tier-card,.rm-live-panel,.rm-live-match-choice,.rm-analytics-field,.rm-label-row,.account-edit-row,.queue-option,.pro-team-option,.pro-team-choice,.rm-game-switch,.rm-appearance,.rm-game-card,.overview-multi-trigger,.overview-multi-option,.notice,.squad-row,.tier-detail-dialog,.sync-dialog) {
+ background:#fff !important;color:var(--rm-ink)!important;border-color:var(--rm-edge)!important;
+}
+html[data-rm-theme="light"] :is(.metric,.panel,.profile,.champ-card,.duo-item,.match,.role-pick,.role-rank-card,.team-combo,.draft-slot,.ranked-card,.tft-player-card,.tft-match-card,.tft-tier-card) {box-shadow:0 2px 12px rgba(28,57,79,.055);}
+/* Secondary surfaces and controls */
+html[data-rm-theme="light"] :is(.btn,.field,select,input,textarea,.tier-select-trigger,.tier-select-menu,.tier-select-option,.draft-option,.draft-options,.pro-picker-menu,.overview-multi-menu,.pro-picker-trigger,.draft-picker-input,.account-add-row input,.rm-appearance-button,.rm-game-card,.rm-game-choice,.rm-game-card .rm-game-art,.rm-live-match-picker button) {
+ background:var(--rm-soft)!important;color:var(--rm-ink)!important;border-color:var(--rm-edge)!important;
+}
+html[data-rm-theme="light"] :is(.btn.primary,#sync,.rm-appearance-button[aria-pressed="true"]) {background:#dff5e9!important;color:#135a40!important;border-color:#83cba7!important;}
+html[data-rm-theme="light"] :is(.nav button:hover,.nav button.active,.rm-game-card.selected,.rm-game-choice.active,.draft-option:hover,.overview-multi-option:hover) {background:#e1f3eb!important;color:#125b41!important;border-color:#8cccb0!important;}
+html[data-rm-theme="light"] .nav button:not(.active) {color:#526778!important;}
+html[data-rm-theme="light"] :is(.nav .ico,.eyebrow,.positive,.tag:before) {color:var(--green)!important;}
+html[data-rm-theme="light"] :is(.negative,.losepill) {color:var(--red)!important;}
+html[data-rm-theme="light"] :is(.table-wrap,th,td,.squad-row,.panel-head,.team-combo-foot,.role-pick-foot) {border-color:var(--rm-edge)!important;}
+html[data-rm-theme="light"] th {background:var(--rm-soft2)!important;color:#4a6275!important;}
+html[data-rm-theme="light"] tbody tr:hover {background:#eaf5ef!important;}
+html[data-rm-theme="light"] :is(.bar,.duo-bar,.sync-track) {background:#e3ebf0!important;}
+html[data-rm-theme="light"] :is(.tag,.winpill) {background:#e4f4eb!important;color:#176b4e!important;}
+html[data-rm-theme="light"] .losepill {background:#ffe7eb!important;}
+html[data-rm-theme="light"] .rm-appearance {background:#fff!important;}
+html[data-rm-theme="light"] .rm-appearance-button[aria-pressed="true"] {box-shadow:inset 0 0 0 1px #69b890;}
+/* Fix dark-on-dark title and unreadable badges visible in the screenshot. */
+html[data-rm-theme="light"] :is(#pageTitle,.title h1,.metric-value,.panel h2,.rm-game-label,.rm-game-label span,.rm-appearance-button,.rm-appearance-label) {opacity:1!important;}
+/* Keep tier rank colors, champion artwork, graphs, success/failure pills and origami images intact. */
+html[data-rm-theme="light"] .tier-S .tier-label {background:#ff9b9b!important;}
+html[data-rm-theme="light"] .tier-A .tier-label {background:#ffc18e!important;}
+html[data-rm-theme="light"] .tier-B .tier-label {background:#ffe59c!important;}
+html[data-rm-theme="light"] .tier-C .tier-label {background:#c2e9b2!important;}
+html[data-rm-theme="light"] .tier-D .tier-label {background:#a8e1d8!important;}
+html[data-rm-theme="light"] .tier-F .tier-label {background:#afcaf5!important;}
+html[data-rm-theme="light"] .tier-label {color:#172b3a!important;}
+html[data-rm-theme="light"] :is(.rm-asol-notice-art,.rm-asol-header) {filter:drop-shadow(0 8px 10px #1c304025);}
+/* Additional feature cards: preserve layouts and apply a white canvas to dark legacy backgrounds. */
+html[data-rm-theme="light"] :is([class*="tft-"],[class*="ranked-"],[class*="overview-"],[class*="tier-"],[class*="draft-"],[class*="account-"],[class*="rm-my-"]):is(.card,.box,.menu,.dropdown,.picker,.tile,.entry,.board,.container,.list,.slot,.row) {
+ background-color:#fff!important;color:var(--rm-ink)!important;border-color:var(--rm-edge)!important;
+}
+html[data-rm-theme="light"] :is(.sync-dialog,.tier-detail-dialog) {background:#fff!important;color:var(--rm-ink)!important;}
+html[data-rm-theme="light"] :is(.sync-overlay,.tier-detail-overlay) {background:rgba(30,52,70,.58)!important;}
+</style><style id="rm-mint-glow-light-theme">
+/* Riftmates: mint-glow light surfaces. Only active in Light mode. */
+html[data-rm-theme="light"] {
+  --rm-mint-border:#b8e5cb;
+  --rm-mint-glow:rgba(76,190,126,.16);
+  --rm-mint-bg:#f0fbf4;
+}
+html[data-rm-theme="light"] #hq .hq-hero,
+html[data-rm-theme="light"] #hq .hq-panel,
+html[data-rm-theme="light"] #tft-hq .panel,
+html[data-rm-theme="light"] #tft-hq .tft-board,
+html[data-rm-theme="light"] #tft-hq .tft-profile {
+  background:radial-gradient(ellipse at 84% 10%,rgba(126,224,164,.23),transparent 58%),linear-gradient(135deg,#f8fff9,#e8f8ee) !important;
+  border-color:var(--rm-mint-border) !important;
+  color:#183a2c !important;
+  box-shadow:0 6px 28px var(--rm-mint-glow),inset 0 1px 0 #fff !important;
+}
+html[data-rm-theme="light"] #hq .hq-award,
+html[data-rm-theme="light"] #hq .hq-panel :is(.hq-card,.hq-stat,.hq-player-card),
+html[data-rm-theme="light"] #tft-hq :is(.tft-player-card,.tft-match-card,.tft-metric,.tft-kpi) {
+  background:linear-gradient(145deg,#ffffff,#e9f9ef) !important;
+  border-color:#c6e8d3 !important;
+  color:#193a2c !important;
+  box-shadow:0 3px 16px rgba(64,170,110,.10) !important;
+}
+html[data-rm-theme="light"] #hq :is(h2,h3,h4,.hq-award strong,.hq-award b,.hq-award .award-name,.hq-award .award-player),
+html[data-rm-theme="light"] #tft-hq :is(h2,h3,h4) {
+  color:#173d2b !important;
+  text-shadow:none !important;
+}
+html[data-rm-theme="light"] #hq :is(p,.hq-desc,.hq-award small,.hq-award .award-stat,.hq-controls label),
+html[data-rm-theme="light"] #tft-hq :is(p,small,.muted) {color:#506d5d !important;}
+html[data-rm-theme="light"] #hq .hq-award .award-title {color:#906300 !important;}
+html[data-rm-theme="light"] #hq .eyebrow {color:#19865c !important;}
+html[data-rm-theme="light"] #hq :is(.hq-panel,.hq-award) a {color:#136c4b;}
+/* Maintain a gentle green highlight on hover, not a strong neon outline. */
+html[data-rm-theme="light"] #hq .hq-award:hover {
+  border-color:#8fd3ad !important;
+  box-shadow:0 7px 24px rgba(64,170,110,.18) !important;
+}
+</style>
+
+<style id="rm-global-mint-light-theme">
+/* Global mint surfaces: light mode only. Dark mode and tier/result colors are untouched. */
+html[data-rm-theme="light"] {
+  --rm-mint-surface:linear-gradient(145deg,#fcfffd 0%,#eefaf2 100%);
+  --rm-mint-surface-strong:radial-gradient(ellipse at 90% 5%,rgba(122,223,160,.19),transparent 60%),linear-gradient(145deg,#fbfffc,#e9f8ee);
+  --rm-mint-outline:#b9e3ca;
+  --rm-mint-ink:#183b2c;
+  --rm-mint-muted:#526e60;
+}
+/* Main cards, content panels, hero banners, profile and statistics cards across both games. */
+html[data-rm-theme="light"] :is(
+  .panel,.metric,.profile,.champ-card,.duo-item,.match,.role-pick,.role-rank-card,
+  .team-combo,.team-combo-player,.draft-slot,.draft-rating-card,.ranked-card,
+  .rank-profile-card,.ranked-current-card,.ranked-chart-wrap,.ranked-hover,
+  .combat-record,.tft-modern-card,.tft-history-card,.tft-profile,.tft-match,
+  .tft-player-card,.tft-match-card,.tft-tier-card,.tft-board,.tft-kpi,
+  .rm-live-panel,.rm-live-board,.rm-live-teams,.rm-score-team,.rm-score-expand td,
+  .hq-hero,.hq-panel,.hq-award,.hq-person,.hq-achievement,.hq-match-link,
+  .hq-timeline,.hq-event,.hq-timeline-detail,.overview-winrate-card,
+  .overview-side-card,.side-stats-card,.side-stats-note,.side-results-card,
+  .arena-panel,.notice,.tft-comp-unit,.tft-unit,.tft-board-portrait,
+  .tft-board-item,.rm-analytics-field,.rm-label-row
+) {
+  background:var(--rm-mint-surface) !important;
+  border-color:var(--rm-mint-outline) !important;
+  color:var(--rm-mint-ink) !important;
+  box-shadow:0 5px 22px rgba(55,158,100,.105),inset 0 1px 0 rgba(255,255,255,.9) !important;
+}
+/* Large containers get the more diffuse glow. */
+html[data-rm-theme="light"] :is(.hq-hero,.hq-panel,.tft-modern-card,.rm-live-board,.combat-record,.ranked-chart-wrap,.panel) {
+  background:var(--rm-mint-surface-strong) !important;
+}
+/* Nested cards and smaller surfaces. */
+html[data-rm-theme="light"] :is(
+  .hq-pill,.hq-heat>div,.tft-bubble,.tft-board-stars,.tft-participant,
+  .rm-live-match-choice,.rm-score-team h3,.rm-score-table th,
+  .combat-leaderboard th,.combat-leaderboard th:first-child,
+  .combat-leaderboard td:first-child,.ranked-queue-choice,
+  .tft-selectors select,.rm-settings-tft,.rm-settings-tft .queue-option,
+  .rm-settings-lol .queue-option,.rm-game-eligibility.lol,
+  .tft-board-item,.tft-match-card,.tft-player-card,.tft-profile,
+  .rm-live-side-blue,.rm-live-side-red
+) {
+  background:#f0fbf4 !important;
+  border-color:#c4e8d2 !important;
+  color:var(--rm-mint-ink) !important;
+}
+/* Light typography for dynamically generated nested content, including Squad HQ. */
+html[data-rm-theme="light"] :is(
+  .hq-hero,.hq-panel,.hq-award,.tft-modern-card,.tft-history-card,.tft-profile,
+  .combat-record,.rm-live-board,.ranked-current-card,.rank-profile-card,
+  .rm-score-team,.rm-live-teams,.tft-match,.tft-kpi
+) :is(h1,h2,h3,h4,h5,h6,strong,b) {color:#194430 !important;text-shadow:none !important;}
+html[data-rm-theme="light"] :is(
+  .hq-hero,.hq-panel,.hq-award,.tft-modern-card,.tft-history-card,.tft-profile,
+  .combat-record,.rm-live-board,.ranked-current-card,.rank-profile-card,
+  .rm-score-team,.rm-live-teams,.tft-match,.tft-kpi
+) :is(p,small,.muted,.subtitle,.hq-desc,.hq-award .award-stat) {color:var(--rm-mint-muted) !important;}
+/* Keep awards' gold titles, semantic result pills, chart colors, game artwork and tier grades. */
+html[data-rm-theme="light"] .hq-award .award-title {color:#906300 !important;}
+html[data-rm-theme="light"] :is(.hq-award,.tft-modern-card,.rank-profile-card,.team-combo,.profile,.champ-card,.duo-item):hover {
+  border-color:#8ed4aa !important;
+  box-shadow:0 8px 28px rgba(55,158,100,.18) !important;
+}
+/* Readable text in the ranked and combat tables. */
+html[data-rm-theme="light"] :is(.rm-score-table th,.combat-leaderboard th,.combat-leaderboard td,.ranked-current-card,.ranked-hover) {color:#244638 !important;}
+</style>
+<style>
+
+/* ==============================================================
+   RIFTMATES — LIGHT MODE: MINT INTERACTIVE SURFACES
+   Applies to controls, badges, ranked boxes, legends and team
+   combinations across League and TFT. Dark mode is untouched.
+   ============================================================== */
+html[data-rm-theme="light"] {
+  --rm-control-bg: linear-gradient(140deg,#ffffff 0%,#effbf3 100%);
+  --rm-control-hover: linear-gradient(140deg,#f6fff9 0%,#e0f6e9 100%);
+  --rm-control-border: #b6e1c6;
+  --rm-control-text: #183b2d;
+  --rm-control-muted: #4c695c;
+  --rm-control-glow: 0 3px 15px rgba(46,159,96,.12), inset 0 1px rgba(255,255,255,.9);
+}
+/* Dropdowns, native selectors, custom selectors, filter controls. */
+html[data-rm-theme="light"] :is(
+  select, input:not([type="checkbox"]):not([type="radio"]), textarea,
+  .dropdown,.filters,.tier-filters,.tier-select-wrap,.tier-native-select,
+  .tier-select-trigger,.tier-select-menu,.tier-select-option,
+  .count-select-wrap,.tier-select-search,.rm-pretty-select,
+  .tft-pretty-selectors,.tft-tier-select,.tft-filter-control,
+  .arena-filter,.arena-filter-wrap,.arena-filter-trigger,.arena-filter-menu,
+  .arena-player-picker,.arena-player-trigger,.arena-player-menu,
+  .rank-picker-wrap,.rank-picker-button,.rank-picker-options,.rank-option,
+  .ranked-picker,.ranked-queue-picker,.ranked-mode-picker,.ranked-mode-btn,
+  .ranked-filters,.ranked-queue-choice,.pro-league-filter,
+  .side-player-filter,.pro-account-list,.pro-account-option,
+  .queue-option,.tft-queue-tabs,.tft-selectors select
+) {
+  background: var(--rm-control-bg) !important;
+  border-color: var(--rm-control-border) !important;
+  color: var(--rm-control-text) !important;
+  box-shadow: var(--rm-control-glow) !important;
+  color-scheme: light;
+}
+html[data-rm-theme="light"] :is(
+  .tier-select-option,.rank-option,.pro-account-option,
+  .arena-filter-menu button,.arena-player-menu button,
+  .ranked-mode-btn,.ranked-queue-choice
+):hover {
+  background: var(--rm-control-hover) !important;
+  border-color: #7fc99c !important;
+}
+html[data-rm-theme="light"] :is(
+  select,input,textarea,.tier-select-trigger,.rank-picker-button,
+  .arena-filter-trigger,.arena-player-trigger,.rm-pretty-select
+):focus-visible {
+  outline: 2px solid #4aaa78 !important;
+  outline-offset: 2px;
+}
+/* Pills, account names, label bubbles, legends, score explanations. */
+html[data-rm-theme="light"] :is(
+  .tag,.profile-tag,.hq-pill,.tft-bubble,.tft-bubble-info,
+  .tft-trait-pill,.tier-detail-pill,.tier-score-legend,
+  .tier-score-legend-band,.tier-score-legend-note,
+  .rm-score-guide,.rm-score-guide-chips > *,
+  .ranked-chart-hint,.overview-chart-hint,.ranked-rank-badge,
+  .tft-rank-badge,.rm-squad-game-badge,.profile-ranks,
+  .rank-profile-queue,.rank-profile-state,.rank-profile-entry,
+  .team-combo-player,.team-combo-head,.team-combo-foot,
+  .hq-match-player,.hq-player-card,.award-player,
+  .rm-live-player,.match-detail-player,.tft-history-player,
+  .pro-player-box,.role-rank-champ,.item-rank-card,
+  .draft-slot,.draft-rating-card,.role-pick,.role-rank-card,
+  .tft-bubble-tooltip
+) {
+  background: var(--rm-control-bg) !important;
+  border-color: var(--rm-control-border) !important;
+  color: var(--rm-control-text) !important;
+  box-shadow: var(--rm-control-glow) !important;
+}
+/* Team-combination cards and nested rows should be readable together. */
+html[data-rm-theme="light"] :is(
+  .team-combo,.team-combo-players,.team-combo-player,
+  .team-combo-head,.team-combo-foot,
+  .rank-profile-card,.ranked-current-card,.ranked-card,
+  .ranked-history-list,.rank-profile-dialog,
+  .ranked-mode-toolbar,.ranked-current,
+  .rm-score-team,.rm-score-team-heading
+) {
+  background: var(--rm-mint-surface) !important;
+  border-color: var(--rm-control-border) !important;
+  color: var(--rm-control-text) !important;
+  box-shadow: var(--rm-control-glow) !important;
+}
+/* Nested text was previously hardcoded dark-on-dark in several views. */
+html[data-rm-theme="light"] :is(
+  .team-combo,.team-combo-player,.rank-profile-card,.ranked-card,
+  .ranked-current-card,.tier-score-legend,.rm-score-guide,
+  .tft-bubble,.hq-pill,.pro-player-box,.role-rank-card,
+  .rank-picker-options,.tier-select-menu,.arena-filter-menu
+) :is(h1,h2,h3,h4,h5,h6,strong,b,.team-combo-player-name,
+       .tier-select-option-name,.role-rank-name,.rank-profile-info,
+       .pro-player-title,.item-rank-name) {
+  color: #193e2d !important;
+  text-shadow: none !important;
+}
+html[data-rm-theme="light"] :is(
+  .team-combo,.team-combo-player,.rank-profile-card,.ranked-card,
+  .ranked-current-card,.tier-score-legend,.rm-score-guide,
+  .tft-bubble,.hq-pill,.pro-player-box,.role-rank-card
+) :is(small,.muted,.subtitle,.team-combo-foot,.rank-profile-note,
+       .pro-player-meta,.role-rank-meta,.item-rank-sub) {
+  color: var(--rm-control-muted) !important;
+}
+/* Preserve semantic victory/defeat badges, tier grades, and chart colors. */
+html[data-rm-theme="light"] :is(
+  .winpill,.losepill,.hq-result-pill,.tier-score-legend-letter
+) { box-shadow: none; }
+/* Keep account chooser styled consistently without overriding its logic. */
+html[data-rm-theme="light"] :is(
+  .pro-account-option,.rank-option,.tier-select-option
+)[aria-selected="true"] {
+  background: #dff5e7 !important;
+  border-color: #6dc38f !important;
+}
+
+</style>
+<style>
+
+/* Contrast and dropdown consistency correction — light mode only */
+html[data-rm-theme="light"] .hq-match-player,
+html[data-rm-theme="light"] .hq-match-player span,
+html[data-rm-theme="light"] .hq-match-avatars .hq-match-player span,
+html[data-rm-theme="light"] .hq-match-link .hq-match-player span {
+  color:#143c2a !important; -webkit-text-fill-color:#143c2a !important;
+  opacity:1 !important; text-shadow:none !important; font-weight:700 !important;
+}
+html[data-rm-theme="light"] .hq-match-player {background:linear-gradient(135deg,#fff,#e7f8ed)!important;border:1px solid #a7dcbc!important;box-shadow:0 2px 9px #3c9e681c!important}
+html[data-rm-theme="light"] :is(.tier-select-wrap .tier-select-trigger,.tier-select-wrap .tier-select-menu,.tier-select-wrap .tier-select-option,.tier-select-wrap .tier-select-search,.tier-select-wrap .tier-search-box,.tier-select-wrap .tier-select-options,.tier-select-wrap .tier-select-option-icon,.tier-select-wrap .tier-select-leading,
+.pro-picker-trigger,.pro-picker-menu,.pro-picker-option,.overview-multi-trigger,.overview-multi-menu,.overview-multi-option,
+.draft-picker-input,.draft-options,.draft-option,.rm-pretty-select,.rank-picker-button,.rank-picker-options,.rank-option,
+.arena-filter-trigger,.arena-filter-menu,.arena-player-trigger,.arena-player-menu,
+select,select option) {
+ background:linear-gradient(145deg,#ffffff,#e9f9ef)!important;
+ color:#173d2b!important;
+ border-color:#a7dcbc!important;
+ box-shadow:0 3px 12px rgba(33,139,78,.10)!important;
+ color-scheme:light;
+}
+html[data-rm-theme="light"] :is(.tier-select-label,.tier-select-option-name,.tier-select-chevron,.tier-select-option-check,.tier-select-search,.pro-picker-trigger,.pro-picker-option,.overview-multi-option,.draft-option,.rank-option,.tier-select-menu button,.tier-select-trigger span,.tier-select-option span){color:#173d2b!important;-webkit-text-fill-color:#173d2b!important;opacity:1!important;text-shadow:none!important}
+html[data-rm-theme="light"] :is(.tier-select-option:hover,.tier-select-option:focus-visible,.tier-select-option[aria-selected="true"],.overview-multi-option:hover,.draft-option:hover,.rank-option:hover,.pro-picker-option:hover){background:#d8f3e3!important;color:#125434!important}
+html[data-rm-theme="light"] :is(.tier-select-menu,.pro-picker-menu,.overview-multi-menu,.draft-options,.rank-picker-options){border:1px solid #94d3ad!important;box-shadow:0 12px 32px rgba(28,116,66,.16)!important}
+html[data-rm-theme="light"] :is(.tier-select-search,.draft-picker-input)::placeholder{color:#527865!important;opacity:1!important}
+
+</style>
+<style id="rm-light-mint-comprehensive">
+
+/* ================================================================
+   RIFTMATES / LIGHT THEME / COMPREHENSIVE MINT COMPONENT PASS
+   Only light mode. Deliberately leaves image tiles, charts, and
+   grade/status meaning intact. Kept at the end to win the cascade.
+   ================================================================ */
+html[data-rm-theme="light"] {
+  --mint-ui-bg:linear-gradient(145deg,#ffffff 0%,#effaf3 100%);
+  --mint-ui-bg-strong:linear-gradient(145deg,#f9fffb 0%,#e1f6e9 100%);
+  --mint-ui-line:#a9dec0;
+  --mint-ui-text:#153b2b;
+  --mint-ui-muted:#456454;
+  --mint-ui-glow:0 4px 17px rgba(35,147,86,.12),inset 0 1px 0 rgba(255,255,255,.92);
+  --mint-ui-glow-hover:0 5px 20px rgba(35,147,86,.19);
+}
+/* Every ordinary selector, native form control, and searchable picker. */
+html[data-rm-theme="light"] :is(
+  select,option,optgroup,textarea,input:not([type=checkbox]):not([type=radio]):not([type=range]),
+  .field,.queue-option,.pro-team-option,.pro-team-choice,.pro-picker-menu,
+  .pro-league-filter,.pro-account-list,.pro-account-option,
+  .rank-picker-wrap,.rank-picker-button,.rank-picker-options,.rank-option,
+  .tier-select-wrap,.tier-select-trigger,.tier-select-menu,.tier-select-option,
+  .tier-search-box,.tier-select-search,.tier-native-select,.tier-select-leading,
+  .overview-multi-trigger,.overview-multi-menu,.overview-multi-search,
+  .overview-multi-option,.overview-multi-footer,
+  .rm-pretty-select,.rm-pretty-menu,.rm-pretty-option,
+  .arena-player-menu,.arena-filter-menu,.arena-filter-trigger,.arena-option,
+  .ranked-mode-picker,.ranked-mode-btn,.ranked-queue-choice,.ranked-picker,
+  .ranked-filters,.ranked-queue-picker,.ranked-mode-toolbar,
+  .rm-game-switch select,.tft-selectors select,
+  .account-edit-row,.account-delete,.account-add-row,
+  .rm-live-match-choice,.rm-settings-tft .queue-option,
+  #settings .rm-settings-lol .queue-option
+) {
+  background:var(--mint-ui-bg) !important;
+  background-color:#f5fcf7 !important;
+  border-color:var(--mint-ui-line) !important;
+  color:var(--mint-ui-text) !important;
+  box-shadow:var(--mint-ui-glow) !important;
+  color-scheme:light;
+}
+/* Selector open state, hover state and keyboard focus. */
+html[data-rm-theme="light"] :is(
+  .tier-select-option,.overview-multi-option,.rm-pretty-option,
+  .rank-option,.pro-account-option,.pro-team-option,.arena-option,
+  .ranked-mode-btn,.ranked-queue-choice,.rm-live-match-choice
+):is(:hover,:focus-visible,.selected,.active,[aria-selected="true"]) {
+  background:var(--mint-ui-bg-strong) !important;
+  border-color:#64bb88 !important;
+  color:var(--mint-ui-text) !important;
+  box-shadow:var(--mint-ui-glow-hover) !important;
+}
+html[data-rm-theme="light"] :is(
+  select,input,textarea,.tier-select-trigger,.overview-multi-trigger,
+  .rm-pretty-select,.rank-picker-button,.arena-filter-trigger
+):focus-visible {outline:2px solid #339a64 !important;outline-offset:2px}
+/* Account selector injected by the existing backend/JS.
+   Match its component namespaces rather than changing its logic. */
+html[data-rm-theme="light"] :is(
+  [id*="my-account" i],[id*="myaccount" i],
+  [id*="account-selector" i],[id*="account-picker" i],
+  [class*="my-account" i],[class*="myaccount" i],
+  [class*="account-selector" i],[class*="account-picker" i],
+  [class*="rm-my-" i]
+):is(button,select,input,.trigger,.menu,.option,.dropdown,.card,.picker,.selector),
+html[data-rm-theme="light"] :is(
+  [id*="my-account" i],[id*="myaccount" i],
+  [id*="account-selector" i],[id*="account-picker" i],
+  [class*="my-account" i],[class*="myaccount" i],
+  [class*="account-selector" i],[class*="account-picker" i],
+  [class*="rm-my-" i]
+) :is(button,select,input,.trigger,.menu,.option,.dropdown,.card,.picker,.selector) {
+  background:var(--mint-ui-bg) !important;
+  background-color:#f4fcf6 !important;
+  border-color:var(--mint-ui-line) !important;
+  color:var(--mint-ui-text) !important;
+  box-shadow:var(--mint-ui-glow) !important;
+}
+html[data-rm-theme="light"] :is(
+  [id*="my-account" i],[id*="myaccount" i],
+  [id*="account-selector" i],[id*="account-picker" i],
+  [class*="my-account" i],[class*="myaccount" i],
+  [class*="account-selector" i],[class*="account-picker" i],
+  [class*="rm-my-" i]
+) :is(span,strong,small,.name,.label,.subtitle,.muted) {
+  color:var(--mint-ui-text) !important;
+  text-shadow:none !important;
+}
+/* Badges, bubbles, traits, player names and mini-stat panels. */
+html[data-rm-theme="light"] :is(
+  .tag,.profile-tag,.hq-pill,.hq-person,.hq-achievement,
+  .hq-match-player,.hq-award-winner,.hq-event,.hq-heat>div,
+  .tft-bubble,.tft-bubble-info,.tft-bubble-tooltip,.tft-trait-pill,
+  .tft-comp-unit,.tft-unit,.tft-board-item,.tft-participant,
+  .tft-good-place,.tft-place,.tft-rank-badge,.tft-kpi,
+  .tier-detail-pill,.tier-detail-metric,.tier-score-legend,
+  .tier-score-legend-band,.tier-score-legend-note,
+  .rm-score-guide,.rm-score-guide-chips span,.rm-label-row,
+  .ranked-rank-badge,.ranked-current-card,.rank-profile-entry,
+  .ranked-hover,.ranked-chart-hint,.overview-chart-hint,
+  .role-rank-champ,.role-rank-card,.draft-rating-card,
+  .draft-option,.item-rank-card,.match-insight,.match-insight-tip,
+  .rm-squad-game-badge,.rm-live-player,.rm-live-match-choice,
+  .pro-player-box,.pro-team-choice,.team-combo-player,
+  .team-combo-head,.team-combo-foot,.team-combo,.team-combo-players,
+  .rank-profile-card,.ranked-card,.rm-score-team,.rm-score-team h3,
+  .rm-score-table th,.rm-score-expand td,.rm-score-row.expanded,
+  .hq-track,.hq-timeline,.hq-timeline-detail,.hq-match-link,
+  .tft-match,.tft-profile,.tft-comp-traits
+) {
+  background:var(--mint-ui-bg) !important;
+  background-color:#f4fcf6 !important;
+  border-color:var(--mint-ui-line) !important;
+  color:var(--mint-ui-text) !important;
+  box-shadow:var(--mint-ui-glow) !important;
+}
+/* Explicit dark text for player names, trait labels and nested content. */
+html[data-rm-theme="light"] :is(
+  .hq-match-player,.hq-person,.team-combo-player,.team-combo,
+  .tft-trait-pill,.tft-bubble,.tft-participant,
+  .ranked-rank-badge,.rank-profile-entry,.rm-score-team,
+  .pro-player-box,.role-rank-card,.tier-score-legend,
+  .rm-score-guide,.rm-label-row,.match-insight
+) :is(span,strong,small,label,b,.name,.player-name,.muted,.subtitle) {
+  color:var(--mint-ui-text) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html[data-rm-theme="light"] .hq-match-player span {
+  color:#163c2a !important;
+  opacity:1 !important;
+  font-weight:650;
+}
+/* VICTORY and DEFEAT: mint surfaces with distinct semantic text and border.
+   Never use near-black backgrounds in light mode. */
+html[data-rm-theme="light"] :is(
+  .hq-result-pill,.match-result,.winpill,.losepill,
+  .tft-place,.tft-good-place
+) {
+  background:var(--mint-ui-bg) !important;
+  background-color:#f2fbf5 !important;
+  border:1px solid var(--mint-ui-line) !important;
+  box-shadow:var(--mint-ui-glow) !important;
+}
+html[data-rm-theme="light"] :is(
+  .hq-result-pill.win,.match-result.win,.winpill,
+  .tft-good-place
+) {color:#12673e !important;border-color:#83cba0 !important}
+html[data-rm-theme="light"] :is(
+  .hq-result-pill.loss,.match-result.loss,.losepill
+) {color:#a22e46 !important;border-color:#e3aab4 !important}
+/* Inline player labels and trait/bubble names must remain readable. */
+html[data-rm-theme="light"] :is(
+  .tft-trait-pill,.tft-bubble,.tft-comp-unit,
+  .hq-match-player,.team-combo-player,.ranked-rank-badge
+) :is(.tft-visual-name,.name,.label,small,span,strong) {
+  color:#183e2c !important;
+  opacity:1 !important;
+}
+/* Preserve visual identity of rank emblems, portraits, tier grade strips,
+   image artwork, chart canvases, and custom color-coded bars. */
+\n</style>
+</head>
 <body><div id="rmThemeSweep" class="rm-theme-sweep" aria-hidden="true"></div><div id="syncOverlay" inert class="sync-overlay" role="status" aria-live="polite" aria-hidden="true"><div class="sync-dialog"><div class="sync-eyebrow">Riftmates · Live sync</div><div class="poro-stage feeding-stage gif-feeding-stage"><img class="feeding-gif" id="rmSyncGif" role="button" tabindex="0" title="Click to show the next loading animation" aria-label="Show next loading animation" src="decor/ekko_jinx_piltover_loop_v2.gif" alt="Jinx and Ekko in Piltover"></div><div class="sync-title" id="syncTitle">Jinx and Ekko are waiting for your match data…</div><div id="syncCopy" class="sync-copy">Fetching your squad’s match history</div><div class="sync-track" role="progressbar" aria-label="Sync progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="syncProgressBar"></i></div><div id="syncProgressLabel" class="sync-copy" style="margin-top:8px;font-size:11px">Preparing sync…</div><div class="sync-tip">Big sample? Poro might need a little snack break.</div></div></div><div id="tierDetailOverlay" class="tier-detail-overlay" aria-hidden="true"><div class="tier-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="tierDetailTitle"><button type="button" class="tier-detail-close" id="tierDetailClose" aria-label="Close champion details">×</button><div id="tierDetailContent"></div></div></div><div class="app"><aside><div class="logo rm-brand-logo"><img src="decor/riftmates_logo.png" alt="Riftmates" class="rm-brand-image"><div class="eyebrow" style="margin-top:3px">Squad intelligence</div></div><div class="rm-game-switch" aria-label="Select game"><div class="rm-game-caption">CHOOSE YOUR GAME</div><div class="rm-game-cards"><button type="button" class="rm-game-card selected" data-game-choice="lol" aria-pressed="true"><span class="rm-game-art rm-lol-art"><img src="decor/lol_logo.png" alt="League of Legends logo"></span><span class="rm-game-label">LEAGUE<span>OF LEGENDS</span></span></button><button type="button" class="rm-game-card" data-game-choice="tft" aria-pressed="false"><span class="rm-game-art rm-tft-art"><img src="decor/tft_logo.png" alt="Teamfight Tactics logo"></span><span class="rm-game-label">TEAMFIGHT<span>TACTICS</span></span></button></div><select id="rmGame" aria-label="Choose game" class="rm-game-native"><option value="lol">League of Legends</option><option value="tft">Teamfight Tactics</option></select></div><nav class="nav">
-<button data-view="tft" data-tft-nav hidden><span class="ico">◈</span> Overview</button><button data-view="tft-hq" data-tft-nav hidden><span class="ico">✦</span> Squad HQ</button><button data-view="tft-players" data-tft-nav hidden><span class="ico">♙</span> Players</button><button data-view="tft-duos" data-tft-nav hidden><span class="ico">♧</span> Duos & synergies</button><button data-view="tft-teams" data-tft-nav hidden><span class="ico">⚔</span> Team combos</button><button data-view="tft-ranked" data-tft-nav hidden><span class="ico">◇</span> Ranked progression</button><button data-view="tft-tiers" data-tft-nav hidden><span class="ico">✧</span> Tier lists</button><button data-view="tft-matches" data-tft-nav hidden><span class="ico">▤</span> Match history</button><button data-view="squad" data-shared-nav hidden><span class="ico">☻</span> Your squad</button><button data-view="settings" data-shared-nav hidden><span class="ico">⚙</span> Settings</button><button class="active" data-view="overview"><span class="ico">◈</span> Overview</button><button data-view="hq"><span class="ico">✦</span> Squad HQ</button><button data-view="players"><span class="ico">♙</span> Players</button><button data-view="duos"><span class="ico">♧</span> Duos & synergy</button><button data-view="teams"><span class="ico">⚔</span> Team combos</button><button data-view="ranked"><span class="ico">◇</span>Ranked progression</button><button data-view="arena"><span class="ico">◎</span> 1v1 Arena</button><button data-view="champs"><span class="ico">✳</span> Champions</button><button data-view="tierlist"><span class="ico">✧</span>Champion tier list</button><button data-view="runes"><span class="ico">✧</span> Rune tiers</button><button data-view="items"><span class="ico">⬡</span> Item rankings</button><button data-view="benchmark"><span class="ico">◉</span>Champion benchmark</button><button data-view="roles"><span class="ico">⌖</span> Roles</button><button data-view="role-rankings"><span class="ico">⇅</span> Role rankings</button><button data-view="combat"><span class="ico">⚔</span> Kills & deaths</button><button data-view="draft"><span class="ico">♟</span> Draft lab</button><button data-view="matches"><span class="ico">▤</span> Match history</button><button data-view="squad"><span class="ico">☻</span> Your squad</button><button data-view="settings"><span class="ico">⚙</span> Settings</button></nav><div class="sidefoot"><span class="eyebrow">Live data</span><br>EU WEST · QUEUE FILTERS<br><br>Choose which queue types to include in Settings. Metrics are descriptive, not predictions or proof of causation.</div></aside>
-<main><div class="rm-asol-header" aria-hidden="true"><img src="decor/origami_asol.png" alt=""></div><header class="topbar"><div class="title"><div class="eyebrow">Your squad · EU West · Normal + Ranked Flex</div><h1 id="pageTitle">Squad overview</h1><div class="subtitle">The people, picks and pairings behind your wins.</div></div><div class="actions"><label for="count" class="muted">Games / player</label><div class="tier-select-wrap count-select-wrap" data-tier-select="count"><select id="count" class="tier-native-select" aria-label="Games per player"><option value="25">25 games</option><option value="50">50 games</option><option value="75">75 games</option><option value="100" selected>100 games</option><option value="125">125 games</option><option value="150">150 games</option><option value="175">175 games</option><option value="200">200 games</option><option value="225">225 games</option><option value="250">250 games</option><option value="275">275 games</option><option value="300">300 games</option><option value="325">325 games</option><option value="350">350 games</option><option value="375">375 games</option><option value="400">400 games</option><option value="425">425 games</option><option value="450">450 games</option><option value="475">475 games</option><option value="500">500 games</option><option value="525">525 games</option><option value="550">550 games</option><option value="575">575 games</option><option value="600">600 games</option><option value="625">625 games</option><option value="650">650 games</option><option value="675">675 games</option><option value="700">700 games</option><option value="725">725 games</option><option value="750">750 games</option><option value="775">775 games</option><option value="800">800 games</option><option value="825">825 games</option><option value="850">850 games</option><option value="875">875 games</option><option value="900">900 games</option><option value="925">925 games</option><option value="950">950 games</option><option value="975">975 games</option><option value="1000">1000 games</option></select><button type="button" class="tier-select-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="tier-select-leading">🎮</span><span class="tier-select-label">100 games</span><span class="tier-select-chevron">⌄</span></button><div class="tier-select-menu" role="listbox" aria-label="Games per player"></div></div><button id="sync" class="btn primary">↻ Sync live data</button></div></header><div id="notice" class="notice">Start the Flask backend, then sync live data.</div>
+<button data-view="tft" data-tft-nav hidden><span class="ico">◈</span> Overview</button><button data-view="tft-hq" data-tft-nav hidden><span class="ico">✦</span> Squad HQ</button><button data-view="tft-players" data-tft-nav hidden><span class="ico">♙</span> Players</button><button data-view="tft-duos" data-tft-nav hidden><span class="ico">♧</span> Duos & synergies</button><button data-view="tft-teams" data-tft-nav hidden><span class="ico">⚔</span> Team combos</button><button data-view="tft-ranked" data-tft-nav hidden><span class="ico">◇</span> Ranked progression</button><button data-view="tft-tiers" data-tft-nav hidden><span class="ico">✧</span> Tier lists</button><button data-view="tft-matches" data-tft-nav hidden><span class="ico">▤</span> Match history</button><button data-view="squad" data-shared-nav hidden><span class="ico">☻</span> Your squad</button><button data-view="settings" data-shared-nav hidden><span class="ico">⚙</span> Settings</button><button class="active" data-view="overview"><span class="ico">◈</span> Overview</button><button data-view="hq"><span class="ico">✦</span> Squad HQ</button><button data-view="players"><span class="ico">♙</span> Players</button><button data-view="duos"><span class="ico">♧</span> Duos & synergy</button><button data-view="teams"><span class="ico">⚔</span> Team combos</button><button data-view="ranked"><span class="ico">◇</span>Ranked progression</button><button data-view="arena"><span class="ico">◎</span> 1v1 Arena</button><button data-view="champs"><span class="ico">✳</span> Champions</button><button data-view="tierlist"><span class="ico">✧</span>Champion tier list</button><button data-view="runes"><span class="ico">✧</span> Rune tiers</button><button data-view="items"><span class="ico">⬡</span> Item rankings</button><button data-view="benchmark"><span class="ico">◉</span>Champion benchmark</button><button data-view="roles"><span class="ico">⌖</span> Roles</button><button data-view="role-rankings"><span class="ico">⇅</span> Role rankings</button><button data-view="combat"><span class="ico">⚔</span> Kills & deaths</button><button data-view="draft"><span class="ico">♟</span> Draft lab</button><button data-view="matches"><span class="ico">▤</span> Match history</button><button data-view="squad"><span class="ico">☻</span> Your squad</button><button data-view="settings"><span class="ico">⚙</span> Settings</button></nav><div class="rm-appearance" role="group" aria-label="Appearance"><div class="rm-appearance-label">Appearance</div><div class="rm-appearance-options"><button type="button" class="rm-appearance-button" data-rm-theme-choice="dark" aria-pressed="true"><span aria-hidden="true">☾</span> Dark</button><button type="button" class="rm-appearance-button" data-rm-theme-choice="light" aria-pressed="false"><span aria-hidden="true">☀</span> Light</button></div></div><div class="sidefoot"><span class="eyebrow">Live data</span><br>EU WEST · QUEUE FILTERS<br><br>Choose which queue types to include in Settings. Metrics are descriptive, not predictions or proof of causation.</div></aside>
+<main><div class="rm-asol-header" aria-hidden="true"></div><header class="topbar"><div class="title"><div class="eyebrow">Your squad · EU West · Normal + Ranked Flex</div><h1 id="pageTitle">Squad overview</h1><div class="subtitle">The people, picks and pairings behind your wins.</div></div><div class="actions"><label for="count" class="muted">Games / player</label><div class="tier-select-wrap count-select-wrap" data-tier-select="count"><select id="count" class="tier-native-select" aria-label="Games per player"><option value="25">25 games</option><option value="50">50 games</option><option value="75">75 games</option><option value="100" selected>100 games</option><option value="125">125 games</option><option value="150">150 games</option><option value="175">175 games</option><option value="200">200 games</option><option value="225">225 games</option><option value="250">250 games</option><option value="275">275 games</option><option value="300">300 games</option><option value="325">325 games</option><option value="350">350 games</option><option value="375">375 games</option><option value="400">400 games</option><option value="425">425 games</option><option value="450">450 games</option><option value="475">475 games</option><option value="500">500 games</option><option value="525">525 games</option><option value="550">550 games</option><option value="575">575 games</option><option value="600">600 games</option><option value="625">625 games</option><option value="650">650 games</option><option value="675">675 games</option><option value="700">700 games</option><option value="725">725 games</option><option value="750">750 games</option><option value="775">775 games</option><option value="800">800 games</option><option value="825">825 games</option><option value="850">850 games</option><option value="875">875 games</option><option value="900">900 games</option><option value="925">925 games</option><option value="950">950 games</option><option value="975">975 games</option><option value="1000">1000 games</option></select><button type="button" class="tier-select-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="tier-select-leading">🎮</span><span class="tier-select-label">100 games</span><span class="tier-select-chevron">⌄</span></button><div class="tier-select-menu" role="listbox" aria-label="Games per player"></div></div><button id="sync" class="btn primary">↻ Sync live data</button></div></header><div id="notice" class="notice"><img class="rm-asol-notice-art" src="decor/origami_asol.png" alt="" aria-hidden="true"><span id="rm-notice-message">Start the Flask backend, then sync live data.</span></div>
 <section id="overview" class="section active"><div class="metrics"><div class="metric"><div class="metric-label">Flex matches</div><div class="metric-value" id="totalGames">—</div><div class="metric-foot">Unique matches retrieved</div></div><div class="metric"><div class="metric-label">Selected players win rate</div><div class="metric-value" id="winRate">—</div><div class="metric-foot">Based on overview player filter</div></div><div class="metric"><div class="metric-label">Shared matches</div><div class="metric-value" id="sharedGames">—</div><div class="metric-foot">2+ squad members in game</div></div><div class="metric"><div class="metric-label">Squad members</div><div class="metric-value" id="memberCount">6</div><div class="metric-foot">Tracked Riot accounts</div></div></div>
 <div class="panel span-12 rm-live-panel"><div class="panel-head"><div><h2><span class="rm-live-dot"></span> Live squad games</h2><p>Scoreboard snapshot from Riot Spectator · checked during sync</p></div><button class="btn" id="liveRefresh" type="button">↻ Check live games</button></div><div id="liveGames"><div class="empty">Sync to check whether your squad is currently playing together.</div></div></div>
 <div class="panel overview-squad-panel"><div class="panel-head"><div><h2>Meet the squad</h2><p>Profile portraits, personal win rates and KDA.</p></div><button class="btn" data-goto="players">Full stats ↗</button></div><div id="overviewPlayers" class="player-grid"><div class="empty">Sync to load player profiles.</div></div></div>
@@ -962,7 +1525,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-hq-match]'
 document.addEventListener('change',e=>{if(e.target?.id==='hqWindow')renderHQ()});
 
 const API='/api';let state=null,version='15.10.1',championCatalog=[];const charts={};const $=id=>document.getElementById(id);const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const pct=v=>`${Number(v||0).toFixed(1)}%`;const delta=v=>`<span class="${v>0?'positive':v<0?'negative':'neutral'}">${v>0?'+':''}${Number(v||0).toFixed(1)} pp</span>`;const rate=v=>`<span class="${v>=50?'positive':'negative'}">${pct(v)}</span>`;const ddragon=()=>`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;const champImg=(champ,cls='mini-champ')=>`<img class="${cls}" loading="lazy" src="${ddragon()}${encodeURIComponent(champ||'Annie')}.png" alt="${safe(champ)}" onerror="this.style.visibility='hidden'">`;const profileImg=(id,cls='avatar')=>`<img class="${cls}" loading="lazy" src="https://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${Number(id)||29}.png" alt="Profile icon" onerror="this.onerror=null;this.src='https://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/29.png'">`;
-function notice(t,err=false){$('notice').textContent=t;$('notice').className='notice'+(err?' error':'')}function name(p){return `${p.gameName}#${p.tagLine}`}function date(m,short=true){return m.gameCreation?new Date(m.gameCreation).toLocaleString(undefined,short?{dateStyle:'medium'}:{dateStyle:'medium',timeStyle:'short'}):'Date unavailable'}function duration(m){return `${Math.max(1,Math.round((m.gameDuration||0)/60))} min`}function queueName(m){return ({400:'Normal Draft',430:'Normal Blind',440:'Ranked Flex',490:'Quickplay'})[Number(m.queueId)]||m.gameMode||'Other'}function table(headers,rows){if(!rows.length)return '<div class="empty">No data for this selection yet.</div>';return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${safe(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c??'—'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}function destroyChart(id){if(charts[id]){charts[id].destroy();delete charts[id]}}function chart(id,type,data,options={}){const el=$(id);if(!el)return;destroyChart(id);charts[id]=new Chart(el,{type,data,options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#aab5c6',usePointStyle:true,boxWidth:8,font:{size:10}}},tooltip:{backgroundColor:'#101722',borderColor:'#344255',borderWidth:1,titleColor:'#f0f4fa',bodyColor:'#c8d1df'}},scales:type==='doughnut'?{}:{x:{ticks:{color:'#8f9cb0',font:{size:10}},grid:{color:'#28334555'},border:{color:'#283345'}},y:{beginAtZero:true,ticks:{color:'#8f9cb0',font:{size:10}},grid:{color:'#28334555'},border:{color:'#283345'}}},...options}})}
+function notice(t,err=false){$('rm-notice-message').textContent=t;$('notice').className='notice'+(err?' error':'')}function name(p){return `${p.gameName}#${p.tagLine}`}function date(m,short=true){return m.gameCreation?new Date(m.gameCreation).toLocaleString(undefined,short?{dateStyle:'medium'}:{dateStyle:'medium',timeStyle:'short'}):'Date unavailable'}function duration(m){return `${Math.max(1,Math.round((m.gameDuration||0)/60))} min`}function queueName(m){return ({400:'Normal Draft',430:'Normal Blind',440:'Ranked Flex',490:'Quickplay'})[Number(m.queueId)]||m.gameMode||'Other'}function table(headers,rows){if(!rows.length)return '<div class="empty">No data for this selection yet.</div>';return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${safe(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c??'—'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}function destroyChart(id){if(charts[id]){charts[id].destroy();delete charts[id]}}function chart(id,type,data,options={}){const el=$(id);if(!el)return;destroyChart(id);charts[id]=new Chart(el,{type,data,options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#aab5c6',usePointStyle:true,boxWidth:8,font:{size:10}}},tooltip:{backgroundColor:'#101722',borderColor:'#344255',borderWidth:1,titleColor:'#f0f4fa',bodyColor:'#c8d1df'}},scales:type==='doughnut'?{}:{x:{ticks:{color:'#8f9cb0',font:{size:10}},grid:{color:'#28334555'},border:{color:'#283345'}},y:{beginAtZero:true,ticks:{color:'#8f9cb0',font:{size:10}},grid:{color:'#28334555'},border:{color:'#283345'}}},...options}})}
 
 document.addEventListener('click',e=>{const chip=e.target.closest('.squad-insight');if(chip){e.preventDefault();e.stopPropagation();const was=chip.classList.contains('open');document.querySelectorAll('.squad-insight.open').forEach(el=>{el.classList.remove('open');el.setAttribute('aria-expanded','false')});if(!was){chip.classList.add('open');chip.setAttribute('aria-expanded','true')}return}document.querySelectorAll('.squad-insight.open').forEach(el=>{el.classList.remove('open');el.setAttribute('aria-expanded','false')})},true);
 document.addEventListener('keydown',e=>{if(e.target.closest('.squad-insight'))e.stopPropagation()},true);
@@ -2931,4 +3494,4 @@ document.addEventListener('click',function(event){
  if(badge){badge.setAttribute('aria-expanded',badge.getAttribute('aria-expanded')==='true'?'false':'true');}
 });
 document.addEventListener('keydown',function(event){if(event.key==='Escape')document.querySelectorAll('.tft-bubble-info[aria-expanded="true"]').forEach(b=>b.setAttribute('aria-expanded','false'));});
-</script></body></html>
+</script><script id="rm-appearance-script">(function(){function apply(theme){theme=theme==='light'?'light':'dark';document.documentElement.dataset.rmTheme=theme;document.querySelectorAll('[data-rm-theme-choice]').forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.rmThemeChoice===theme));});try{localStorage.setItem('riftmates_theme',theme);}catch(e){}}document.querySelectorAll('[data-rm-theme-choice]').forEach(function(button){button.addEventListener('click',function(){apply(button.dataset.rmThemeChoice);});});apply(document.documentElement.dataset.rmTheme);})();</script></body></html>
