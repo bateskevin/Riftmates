@@ -24,7 +24,7 @@ import requests
 
 from dotenv import load_dotenv
 
-from flask import Flask, jsonify, request, send_file, send_from_directory, session
+from flask import Flask, jsonify, request, send_file, send_from_directory, session, Response
 
 load_dotenv()
 
@@ -50,6 +50,9 @@ if not API_KEY:
     raise RuntimeError("RIOT_API_KEY is missing. Add it to your .env file.")
 
 app = Flask(__name__)
+
+from site_analytics import bp as analytics_bp, visit as analytics_visit, track_sync as analytics_sync
+app.register_blueprint(analytics_bp)
 # A stable key keeps anonymous profiles accessible across server restarts.
 # Set FLASK_SECRET_KEY explicitly for any public deployment.
 _secret_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".riftmates_session_secret")
@@ -157,7 +160,9 @@ def current_user_id():
 
 @app.before_request
 def ensure_user_session():
-    current_user_id()
+    uid = current_user_id()
+    if request.path == "/":
+        analytics_visit(uid)
 
 def user_sync_lock(uid):
     with USER_SYNC_LOCKS_LOCK:
@@ -1062,16 +1067,118 @@ def decorative_art(filename):
     """Serve dashboard decorations from the project decor directory."""
     return send_from_directory(os.path.join(BASE_DIR, "decor"), filename)
 
+def _apply_tier_filter_fix(html):
+    """Patch tier-list scoring in the served HTML; no frontend file changes needed.
+
+    This is idempotent, so a future frontend containing the fix stays unchanged.
+    """
+    marker = "function rmApplyTierGrades(rows,playerId,role,champion='all'){"
+    weight_helper = """// Normalize role-specific tier weights, including missing/zero settings.
+function rmSafeTierWeights(pairs){
+ const clean=pairs.map(([key,weight])=>[key,Number.isFinite(Number(weight))?Math.max(0,Number(weight)):0]);
+ const total=clean.reduce((sum,[,weight])=>sum+weight,0);
+ if(total<=0)return clean.map(([key])=>[key,100/clean.length]);
+ return clean.map(([key,weight])=>[key,weight*100/total]);
+}
+"""
+    if 'function rmSafeTierWeights(' not in html:
+        if html.count(marker) != 1:
+            app.logger.warning("Tier fix not applied: grading function missing or ambiguous")
+            return html
+        html = html.replace(marker, weight_helper + marker, 1)
+    replacements = {
+        "const unfiltered=role==='all'&&champion==='all';":
+            "const unfiltered=role==='all';",
+        "const metrics=PERF_METRICS.map(([key,w])=>[key,rmStatSetting(w,role)]);":
+            "const metrics=rmSafeTierWeights(PERF_METRICS.map(([key,w])=>[key,rmStatSetting(w,role)]));",
+        "const metrics=[['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]];":
+            "const metrics=rmSafeTierWeights([['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]]);",
+        "for(const [key,weight] of [['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]]){":
+            "for(const [key,weight] of rmSafeTierWeights([['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]])){",
+    }
+    for old, new in replacements.items():
+        if new in html:
+            continue
+        if html.count(old) != 1:
+            app.logger.warning("Tier fix: expected one match for %r, found %d", old[:70], html.count(old))
+            continue
+        html = html.replace(old, new, 1)
+    return html
+
+
 @app.get("/")
 
-def home(): return send_file(os.path.join(BASE_DIR,"riftmates.html"))
+def home():
+    # Inject a lightweight navigation tracker without modifying the existing frontend.
+    with open(os.path.join(BASE_DIR, "riftmates.html"), encoding="utf-8") as f:
+        html = f.read()
+    html = _apply_tier_filter_fix(html)
+    # Emit an explicit navigation event from Riftmates' own go(id) function.
+    # This is more reliable than inferring SPA navigation from DOM mutations.
+    nav_marker = "function go(id){"
+    if nav_marker in html:
+        html = html.replace(nav_marker, "function go(id){window.dispatchEvent(new CustomEvent('riftmates:navigate',{detail:{view:id}}));", 1)
+    tag = '<script defer src="/analytics.js?v=3"></script><script defer src="/my_account.js?v=2"></script>'
+    if '</body>' in html.lower():
+        import re as _re
+        html = _re.sub(r'</body\s*>', tag + '</body>', html, count=1, flags=_re.I)
+    else:
+        html += tag
+    return Response(html, mimetype="text/html")
 
+
+# Optional self-selected account. This is a preference, NOT Riot ownership proof.
+def _self_account_db():
+    conn = _user_db()
+    conn.execute("CREATE TABLE IF NOT EXISTS user_my_account (user_id TEXT PRIMARY KEY, game_name TEXT NOT NULL, tag_line TEXT NOT NULL)")
+    return conn
+
+@app.get("/api/my-account")
+def get_my_account():
+    with closing(_self_account_db()) as conn:
+        row = conn.execute("SELECT game_name, tag_line FROM user_my_account WHERE user_id=?", (current_user_id(),)).fetchone()
+    if not row:
+        return jsonify({"account": None, "verified": False})
+    account = next((p for p in _get_user_players() if p["gameName"].casefold()==row["game_name"].casefold() and p["tagLine"].casefold()==row["tag_line"].casefold()), None)
+    return jsonify({"account": account, "verified": False})
+
+def _same_origin_preference_request():
+    from urllib.parse import urlsplit
+    origin = request.headers.get("Origin")
+    if origin:
+        return urlsplit(origin).netloc == urlsplit(request.host_url).netloc and urlsplit(origin).scheme in ("http", "https")
+    referer = request.headers.get("Referer")
+    return bool(referer and urlsplit(referer).netloc == urlsplit(request.host_url).netloc and urlsplit(referer).scheme in ("http", "https"))
+
+@app.route("/api/my-account", methods=["PUT", "DELETE"])
+def set_my_account():
+    if not _same_origin_preference_request():
+        return jsonify({"error": "Same-origin request required"}), 403
+    uid = current_user_id()
+    if request.method == "DELETE":
+        with closing(_self_account_db()) as conn, conn:
+            conn.execute("DELETE FROM user_my_account WHERE user_id=?", (uid,))
+        return jsonify({"account": None, "verified": False})
+    payload = request.get_json(silent=True) or {}
+    game = str(payload.get("gameName", "")).strip()
+    tag = str(payload.get("tagLine", "")).strip()
+    account = next((p for p in _get_user_players() if p["gameName"].casefold()==game.casefold() and p["tagLine"].casefold()==tag.casefold()), None)
+    if not account:
+        return jsonify({"error": "Choose an account from your saved squad"}), 400
+    with closing(_self_account_db()) as conn, conn:
+        conn.execute("INSERT INTO user_my_account(user_id,game_name,tag_line) VALUES(?,?,?) ON CONFLICT(user_id) DO UPDATE SET game_name=excluded.game_name, tag_line=excluded.tag_line", (uid, account["gameName"], account["tagLine"]))
+    return jsonify({"account": account, "verified": False})
+
+@app.get("/my_account.js")
+def my_account_script():
+    return send_from_directory(BASE_DIR, "my_account.js", mimetype="application/javascript")
 
 # TFT first-draft API: uses the same saved Riot IDs and regional routing as League.
 TFT_QUEUES = {"ranked": 1100, "doubleup": 1160}
 
 @app.get("/api/tft/sync")
 def api_tft_sync():
+    analytics_sync("tft", "requested")
     mode = request.args.get("mode", "ranked").lower()
     if mode not in (*TFT_QUEUES, "all"):
         return jsonify({"error": "Select ranked, doubleup or all."}), 400
@@ -1297,6 +1404,7 @@ def api_tft_cached():
 
 @app.post("/api/tft/sync/start")
 def api_tft_sync_start():
+    analytics_sync("tft", "requested")
     import uuid
     mode = str(request.args.get("mode", "all")).lower()
     if mode not in (*TFT_QUEUES, "all"):
@@ -1332,9 +1440,11 @@ def api_tft_sync_start():
                     raise RuntimeError(payload.get("error", "TFT API error"))
                 result=response.get_json()
                 _tft_snapshot_save(uid,result)
+            analytics_sync("tft", "completed")
             with _TFT_JOBS_LOCK:
                 _TFT_JOBS[job_id].update(status="complete",percent=100,message="Done",result=result)
         except Exception as exc:
+            analytics_sync("tft", "failed")
             app.logger.exception("TFT background sync failed")
             with _TFT_JOBS_LOCK:
                 _TFT_JOBS[job_id].update(status="failed",error=str(exc)[:500],message="Sync failed")
@@ -2009,12 +2119,19 @@ def sync_progress():
 
 @app.get("/api/sync")
 def sync():
+    analytics_sync("lol", "requested")
     uid = current_user_id()
     lock = user_sync_lock(uid)
     if not lock.acquire(blocking=False):
         return jsonify({"error": "A sync is already running for this browser session."}), 409
     try:
-        return _sync_user(uid)
+        result = _sync_user(uid)
+        status = result[1] if isinstance(result, tuple) and len(result) > 1 and isinstance(result[1], int) else getattr(result, 'status_code', 200)
+        analytics_sync("lol", "completed" if status < 400 else "failed")
+        return result
+    except Exception:
+        analytics_sync("lol", "failed")
+        raise
     finally:
         lock.release()
 

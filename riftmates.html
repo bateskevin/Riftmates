@@ -1950,10 +1950,18 @@ function getChampionTier(score,role){
  for(const t of ['S','A','B','C','D'])if(value>=cutoffs[t])return t;
  return 'F';
 }
+// Normalize scoring weights for every role and filter combination. Saved settings can
+// contain zero/missing weights; never turn that into a zero score for every entry.
+function rmSafeTierWeights(pairs){
+ const clean=pairs.map(([key,weight])=>[key,Number.isFinite(Number(weight))?Math.max(0,Number(weight)):0]);
+ const total=clean.reduce((sum,[,weight])=>sum+weight,0);
+ if(total<=0)return clean.map(([key])=>[key,100/clean.length]);
+ return clean.map(([key,weight])=>[key,weight*100/total]);
+}
 function rmApplyTierGrades(rows,playerId,role,champion='all'){
  // Without a role filter the score is the observed win rate (including player-only selections),
  // not a relative percentile or a weighted score. Use the saved JSON cutoffs.
- const unfiltered=role==='all'&&champion==='all'; // Player-only filtering still uses absolute win-rate tiers.
+ const unfiltered=role==='all'; // Any selection without a specific role uses raw win rate, including champion/player filters.
  if(!unfiltered)return rows;
  return rows.map(entry=>{
   const raw=Number(entry.rawWinRate);
@@ -1979,7 +1987,7 @@ function calculateChampionTiers(playerId='all',role='all'){
  const all=[...stats.values()].map(e=>({...e,rawWinRate:e.games?100*e.wins/e.games:0,winRate:e.games?100*e.wins/e.games:0,kda:(e.kills+e.assists)/Math.max(e.deaths,1),csPerMin:e.csPerMin/Math.max(e.games,1),visionPerMin:e.visionPerMin/Math.max(e.games,1),damagePerMin:e.damagePerMin/Math.max(e.games,1),objectivePerGame:e.objectivePerGame/Math.max(e.games,1)}));
  // Bayesian smoothing keeps a 1-0 champion from dominating the board: prior = five games at 50%.
  all.forEach(e=>{e.smoothedWinRate=((e.wins+rmStatSetting('winPriorGames',role)*rmStatSetting('winPriorRate',role)/100)/(e.games+rmStatSetting('winPriorGames',role)))*100});
- const metrics=PERF_METRICS.map(([key,w])=>[key,rmStatSetting(w,role)]);
+ const metrics=rmSafeTierWeights(PERF_METRICS.map(([key,w])=>[key,rmStatSetting(w,role)]));
  // Percentile ranks put unlike units on a comparable 0–100 scale.
  for(const [key,weight] of metrics){const sorted=all.map(e=>e[key]).sort((a,b)=>a-b);for(const e of all){const below=sorted.filter(v=>v<e[key]).length;const equal=sorted.filter(v=>v===e[key]).length;const percentile=sorted.length<=1?50:((below+(equal-1)/2)/(sorted.length-1))*100;e.metricDetails=e.metricDetails||{};e.metricDetails[key]={percentile,weight,contribution:percentile*weight/100};e.score=(e.score||0)+percentile*weight/100}}
  return rmApplyTierGrades(all.map(e=>({...e,score:Math.round(e.score||0),tier:getChampionTier(e.score||0,role)})),playerId,role);
@@ -2182,7 +2190,7 @@ function calculateItemTiers(playerId='all',role='all',champion='all'){
  const all=[...stats.values()].map(r=>({...r,rawWinRate:100*r.wins/r.games,smoothedWinRate:100*(r.wins+rmStatSetting('runePriorGames',role)*.5)/(r.games+rmStatSetting('runePriorGames',role)),usageRate:appearances?100*r.games/appearances:0}));
  // A conservative ranking: adjusted win rate is the primary performance signal.
  // Sample size is a secondary confidence signal, not a claim of item causality.
- const metrics=[['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]];
+ const metrics=rmSafeTierWeights([['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]]);
  for(const [key,weight] of metrics){
   const sorted=all.map(r=>r[key]).sort((a,b)=>a-b);
   for(const r of all){
@@ -2292,7 +2300,7 @@ function calculateRuneTiers(playerId='all',role='all',champion='all'){
   }
  }
  const all=[...stats.values()].map(r=>({...r,rawWinRate:100*r.wins/r.games,smoothedWinRate:100*(r.wins+rmStatSetting('runePriorGames',role)*.5)/(r.games+rmStatSetting('runePriorGames',role)),usageRate:appearances?100*r.games/appearances:0,score:0,metricDetails:{}}));
- for(const [key,weight] of [['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]]){
+ for(const [key,weight] of rmSafeTierWeights([['smoothedWinRate',rmStatSetting('runeWinRateWeight',role)],['games',rmStatSetting('runePopularityWeight',role)]])){
   const sorted=all.map(r=>r[key]).sort((a,b)=>a-b);
   for(const r of all){
    const below=sorted.filter(v=>v<r[key]).length,equal=sorted.filter(v=>v===r[key]).length;
