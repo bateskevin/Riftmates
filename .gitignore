@@ -1,0 +1,34 @@
+# Secrets
+.env
+.env.*
+!.env.example
+.riftmates_session_secret
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# SQLite databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Local application data
+logs/
+*.log
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+#ssh keys 
+ssh/
